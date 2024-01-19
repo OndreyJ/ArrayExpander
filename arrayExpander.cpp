@@ -6,13 +6,12 @@ std::unique_ptr<int[]> expandArray(int, int *);
 int main()
 {
 
-    const int index = 5;
-    int array[index] = {1, 2, 3, 4, 5};
-    std::unique_ptr<int[]> arrPtr = expandArray(index, array);
+    const int INDEX = 5;
+    int array[INDEX] = {1, 2, 3, 4, 5};
+    std::unique_ptr<int[]> arrPtr = expandArray(INDEX, array);
 
-    for (int i = 0; i < index * 2; i++)
+    for (int i = 0; i < INDEX * 2; i++)
     {
-
         std::cout << arrPtr[i] << std::endl;
     }
 
@@ -27,13 +26,9 @@ std::unique_ptr<int[]> expandArray(int index, int *array)
     {
 
         if (i < index)
-        {
             arrPtr[i] = array[i];
-        }
         else
-        {
             arrPtr[i] = 0;
-        }
     }
 
     return arrPtr;
